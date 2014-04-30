@@ -30,6 +30,9 @@ module ActiveDiigo
 
     def initialize(uname, password)
       self.class.basic_auth uname, password
+      
+      proxy = URI.parse(ActiveDiigo.proxy)
+      self.class.http_proxy proxy.host, proxy.port
     end
 
     def bookmarks(options = {})
