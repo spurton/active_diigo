@@ -30,7 +30,7 @@ require 'active_diigo/response_object'
   
 module ActiveDiigo
   
-  class << self; attr_accessor :api_key, :username, :password; end
+  class << self; attr_accessor :api_key, :username, :password, :proxy; end
   
   def self.version
     File.read(File.join(File.dirname(__FILE__), '..', 'VERSION'))
