@@ -7,6 +7,7 @@ describe "ActiveDiigo" do
       ActiveDiigo.api_key = 'TEST_API_KEY'
       ActiveDiigo.username = 'test-user'
       ActiveDiigo.password = 'test-pass'
+      ActiveDiigo.proxy = 'http://127.0.0.1:99'
     end
     
     it "should have api_key as an accessor" do
@@ -40,6 +41,17 @@ describe "ActiveDiigo" do
       ActiveDiigo.should respond_to(:password)
       ActiveDiigo.password = 'TEST_PASS'
       ActiveDiigo.password.should == 'TEST_PASS'
+    end
+    
+    it "should have proxy as an accessor" do
+      ActiveDiigo.should respond_to(:proxy)
+      ActiveDiigo.proxy.should == 'http://127.0.0.1:99'
+    end
+    
+    it "should have proxy as an accessor" do
+      ActiveDiigo.should respond_to(:proxy)
+      ActiveDiigo.proxy = 'https://127.0.0.1:80'
+      ActiveDiigo.proxy.should == 'https://127.0.0.1:80'
     end
     
     it "should respond version method" do
@@ -115,6 +127,7 @@ describe "ActiveDiigo" do
       ActiveDiigo.api_key = 'TEST_API_KEY'
       ActiveDiigo.username = 'test-user'
       ActiveDiigo.password = 'test-pass'
+      ActiveDiigo.proxy = 'http://127.0.0.1:99'
     end
     
     it "should find bookmarks with user test-user and return 10 bookmarks defaultly" do
